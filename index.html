@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - QuickAid Hub by CuraeNurse</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* --- PERFECTED SMOOTH UI --- */
+        
+        body {
+            background-color: #f8fafc;
+        }
+
+        /* 1. Perfectly Aligned Soft Glass Pill Reminder */
+        .alert-pill {
+            background: rgba(254, 242, 242, 0.85);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(254, 202, 202, 0.6);
+            color: #991b1b;
+            border-radius: 50px;
+            padding: 1rem 2.5rem;
+            margin: 2.5rem auto 0;
+            width: fit-content;
+            max-width: 90%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            text-align: center;
+            box-shadow: 0 10px 25px -5px rgba(220, 38, 38, 0.1);
+            animation: pulseSoft 3s infinite;
+        }
+
+        .alert-pill i {
+            color: #ef4444;
+            font-size: 1.3rem;
+            animation: gentleBounce 2s infinite;
+        }
+
+        @keyframes gentleBounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-3px); }
+        }
+
+        @keyframes pulseSoft {
+            0% { box-shadow: 0 0 0 0 rgba(220, 38, 38, 0.15); }
+            50% { box-shadow: 0 0 0 12px rgba(220, 38, 38, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(220, 38, 38, 0); }
+        }
+
+        /* 2. Hero Section & THE SMOOTH HEARTBEAT LINE */
+        .hero {
+            padding: 3rem 5% 4rem;
+            min-height: 60vh;
+        }
+
+        .hero-content h2 {
+            font-size: 4rem;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            color: var(--primary-blue);
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        /* The Rebuilt EKG Line */
+        .ekg-wrapper {
+            display: inline-flex;
+            align-items: center;
+            height: 50px; /* Locks the height so it doesn't collapse */
+            margin-left: 15px;
+        }
+
+        .ekg-line {
+            width: 130px;
+            height: 40px;
+            filter: drop-shadow(0 2px 4px rgba(220, 38, 38, 0.4)); /* Premium Glow */
+        }
+
+        .ekg-line path {
+            fill: none;
+            stroke: var(--primary-red);
+            stroke-width: 4.5;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            stroke-dasharray: 300;
+            stroke-dashoffset: 300;
+            animation: drawSmoothBeat 3.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+        }
+
+        @keyframes drawSmoothBeat {
+            0% { stroke-dashoffset: 300; opacity: 0; }
+            15% { opacity: 1; }
+            50% { stroke-dashoffset: 0; opacity: 1; }
+            80% { opacity: 1; }
+            100% { stroke-dashoffset: 0; opacity: 0; }
+        }
+
+        .hero-image img {
+            border-radius: 12px;
+            box-shadow: 0 20px 40px -10px rgba(0,0,0,0.15);
+        }
+
+        .floating-img {
+            animation: floatSmooth 6s ease-in-out infinite;
+        }
+
+        @keyframes floatSmooth {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+
+        .btn-smooth {
+            background-color: var(--primary-red);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 10px 20px rgba(220, 38, 38, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .btn-smooth:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 25px rgba(220, 38, 38, 0.4);
+            background-color: #b91c1c;
+        }
+
+        /* 3. Strict 4-Column Grid */
+        .strict-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        @media (max-width: 900px) {
+            .strict-grid { grid-template-columns: repeat(2, 1fr); }
+            .alert-pill { border-radius: 20px; flex-direction: column; gap: 8px; padding: 1.5rem; }
+            .hero-content h2 { font-size: 3rem; }
+        }
+
+        .feature-card {
+            text-align: center;
+            background: white;
+            padding: 2.5rem 1.5rem;
+            border-radius: 16px;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            border-bottom: 4px solid transparent;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1);
+            border-bottom: 4px solid var(--primary-red);
+        }
+
+        .icon-circle {
+            width: 70px;
+            height: 70px;
+            background-color: var(--primary-blue);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto 1.5rem;
+            color: white;
+            font-size: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover .icon-circle {
+            background-color: var(--primary-red);
+            transform: scale(1.1);
+        }
+
+        /* 4. Quote Section */
+        .quote-wrapper {
+            text-align: center;
+            padding: 4rem 2rem;
+            margin-top: 4rem;
+            background-color: #f1f5f9;
+        }
+
+        .quote-wrapper h3 {
+            font-family: 'Times New Roman', serif;
+            font-size: 1.8rem;
+            font-style: italic;
+            color: #334155;
+            margin-bottom: 1rem;
+        }
+
+        .stagger-1 { animation-delay: 0.1s; }
+        .stagger-2 { animation-delay: 0.2s; }
+        .stagger-3 { animation-delay: 0.3s; }
+        .stagger-4 { animation-delay: 0.4s; }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+    <a href="index.html" class="logo">
+        <i class="fa-solid fa-house-medical-flag"></i>
+        <div class="logo-text">
+            <h1>QuickAid Hub</h1>
+            <span>by CuraeNurse</span>
+        </div>
+    </a>
+    <ul class="nav-links">
+        <li><a href="index.html" class="active">HOME</a></li>
+        <li><a href="about.html">ABOUT FIRST AID</a></li>
+        <li><a href="emergencies.html">EMERGENCIES</a></li>
+        <li><a href="cpr.html">CPR GUIDE</a></li>
+        <li><a href="kit.html">FIRST AID KIT</a></li>
+        <li><a href="safety.html">SAFETY TIPS</a></li>
+        <li><a href="contact.html">CONTACT US</a></li>
+    </ul>
+</nav>
+
+    <div class="alert-pill animate-on-scroll">
+        <i class="fa-solid fa-bell"></i>
+        <p style="margin: 0;"><strong>Emergency Reminder:</strong> Always call local emergency numbers immediately. First aid does not substitute professional medical treatment.</p>
+    </div>
+
+    <section class="hero">
+        <div class="hero-content animate-on-scroll">
+            <h2 style="display: block;">
+                First Aid Essentials.<br>
+                <span style="color: var(--primary-red); display: inline-flex; align-items: center; flex-wrap: wrap;">
+                    Be Prepared. Save Lives.
+                    <span class="ekg-wrapper">
+                        <svg class="ekg-line" viewBox="0 0 150 40" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0,20 L30,20 L35,25 L45,5 L55,35 L60,20 L150,20" />
+                        </svg>
+                    </span>
+                </span>
+            </h2>
+            <p style="margin-top: 15px; font-size: 1.1rem; color: var(--text-muted); line-height: 1.6;">QuickAid Hub by CuraeNurse is your trusted source of first aid knowledge and guidance. Learn. Act. Make a Difference.</p>
+            <br>
+            <a href="emergencies.html" class="btn-smooth">LEARN FIRST AID <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+        <div class="hero-image animate-on-scroll">
+            <img src="https://images.unsplash.com/photo-1603398938378-e54eab446dde?auto=format&fit=crop&q=80&w=600" alt="First Aid Kit" class="floating-img">
+        </div>
+    </section>
+
+    <section class="container" style="padding-top: 0;">
+        <h3 style="text-align: center; color: var(--primary-blue); font-size: 1.5rem; margin-bottom: 2rem;" class="animate-on-scroll">What You'll Find Here</h3>
+        <hr style="width: 50px; border: 2px solid var(--primary-red); margin: 0 auto 3rem;">
+        
+        <div class="strict-grid">
+            
+            <div class="feature-card animate-on-scroll stagger-1">
+                <div class="icon-circle"><i class="fa-solid fa-briefcase-medical"></i></div>
+                <h4 style="margin-bottom: 10px; font-size: 1.1rem; color: var(--text-dark);">Learn First Aid</h4>
+                <p style="font-size: 0.9rem; color: var(--text-muted);">Easy-to-understand guides for common emergencies.</p>
+            </div>
+
+            <div class="feature-card animate-on-scroll stagger-2">
+                <div class="icon-circle"><i class="fa-solid fa-heart-circle-bolt"></i></div>
+                <h4 style="margin-bottom: 10px; font-size: 1.1rem; color: var(--text-dark);">CPR Guide</h4>
+                <p style="font-size: 0.9rem; color: var(--text-muted);">Step-by-step instructions to help you save a life.</p>
+            </div>
+
+            <div class="feature-card animate-on-scroll stagger-3">
+                <div class="icon-circle"><i class="fa-solid fa-shield-virus"></i></div>
+                <h4 style="margin-bottom: 10px; font-size: 1.1rem; color: var(--text-dark);">Stay Safe</h4>
+                <p style="font-size: 0.9rem; color: var(--text-muted);">Helpful tips to prevent accidents and stay prepared.</p>
+            </div>
+
+            <div class="feature-card animate-on-scroll stagger-4">
+                <div class="icon-circle"><i class="fa-solid fa-envelope-open-text"></i></div>
+                <h4 style="margin-bottom: 10px; font-size: 1.1rem; color: var(--text-dark);">Contact Us</h4>
+                <p style="font-size: 0.9rem; color: var(--text-muted);">Have questions or suggestions? We're here to help!</p>
+            </div>
+
+        </div>
+    </section>
+
+    <div class="quote-wrapper animate-on-scroll">
+        <i class="fa-solid fa-hand-holding-heart" style="color: var(--primary-red); font-size: 2.5rem; margin-bottom: 1.5rem;"></i>
+        <h3>"Anyone can save a life. All it takes is the right knowledge and the will to act."</h3>
+        <p style="color: var(--text-muted); font-weight: 600;">— Be the reason someone lives.</p>
+    </div>
+
+    <footer>
+        <p>References: <a href="#">World Health Organization</a> | <a href="#">International Federation of Red Cross</a> | <a href="#">American Red Cross</a></p>
+        <br>
+        <p>&copy; 2026 QuickAid Hub by CuraeNurse. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

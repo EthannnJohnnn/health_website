@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CPR Guide - QuickAid Hub</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* --- RESTORED CPR PAGE BODY STYLES --- */
+
+        /* Premium CPR Header */
+        .cpr-header {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, #1e40af 100%);
+            color: white;
+            padding: 4rem 3rem;
+            border-radius: 24px;
+            margin-bottom: 4rem;
+            box-shadow: 0 20px 40px -10px rgba(30, 58, 138, 0.3);
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .cpr-header::after {
+            content: '\f21e'; /* Heartbeat icon code */
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            position: absolute;
+            right: -20px;
+            bottom: -40px;
+            font-size: 15rem;
+            color: rgba(255,255,255,0.05);
+            transform: rotate(-15deg);
+        }
+
+        /* Numbered Step Cards */
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .step-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            padding: 2.5rem 2rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px -10px rgba(0,0,0,0.05);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            z-index: 1;
+        }
+
+        .step-card:hover {
+            transform: translateY(-10px);
+            background: #ffffff;
+            box-shadow: 0 20px 40px -10px rgba(30, 58, 138, 0.1);
+            border-color: rgba(220, 38, 38, 0.3);
+        }
+
+        /* Background Watermark Number */
+        .step-card::before {
+            content: attr(data-step);
+            position: absolute;
+            top: -10px;
+            right: 10px;
+            font-size: 8rem;
+            font-weight: 900;
+            color: rgba(30, 58, 138, 0.04);
+            z-index: -1;
+            transition: color 0.4s ease;
+        }
+
+        .step-card:hover::before {
+            color: rgba(220, 38, 38, 0.08);
+        }
+
+        .step-card h3 {
+            color: var(--primary-blue);
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .step-card p {
+            color: var(--text-muted);
+            line-height: 1.7;
+            font-size: 1rem;
+        }
+
+        /* Soft Pill Reminder */
+        .alert-pill {
+            background: rgba(254, 242, 242, 0.85);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(254, 202, 202, 0.6);
+            color: #991b1b;
+            border-radius: 50px;
+            padding: 1rem 2.5rem;
+            margin: 0 auto 4rem;
+            width: fit-content;
+            max-width: 90%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            text-align: center;
+            box-shadow: 0 10px 25px -5px rgba(220, 38, 38, 0.1);
+            animation: pulseSoft 3s infinite;
+        }
+
+        .alert-pill i {
+            color: #ef4444;
+            font-size: 1.3rem;
+            animation: gentleBounce 2s infinite;
+        }
+
+        @keyframes gentleBounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-3px); } }
+        @keyframes pulseSoft { 0% { box-shadow: 0 0 0 0 rgba(220, 38, 38, 0.15); } 50% { box-shadow: 0 0 0 12px rgba(220, 38, 38, 0); } 100% { box-shadow: 0 0 0 0 rgba(220, 38, 38, 0); } }
+    </style>
+</head>
+<body>
+    
+    <nav class="navbar">
+        <a href="index.html" class="logo">
+            <i class="fa-solid fa-house-medical-flag"></i>
+            <div class="logo-text">
+                <h1>QuickAid Hub</h1>
+                <span>by CuraeNurse</span>
+            </div>
+        </a>
+        <ul class="nav-links">
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="about.html">ABOUT FIRST AID</a></li>
+            <li><a href="emergencies.html">EMERGENCIES</a></li>
+            <li><a href="cpr.html" class="active">CPR GUIDE</a></li>
+            <li><a href="kit.html">FIRST AID KIT</a></li>
+            <li><a href="safety.html">SAFETY TIPS</a></li>
+            <li><a href="contact.html">CONTACT US</a></li>
+        </ul>
+    </nav>
+
+    <div class="container animate-on-scroll" style="padding-top: 3rem;">
+        
+        <div class="cpr-header animate-on-scroll">
+            <h2 style="font-size: 2.5rem; margin-bottom: 1rem; position: relative; z-index: 2;">What is CPR?</h2>
+            <p style="font-size: 1.15rem; line-height: 1.8; color: #e2e8f0; max-width: 800px; position: relative; z-index: 2;">Cardiopulmonary Resuscitation (CPR) is an emergency procedure performed when a person's breathing or heartbeat has stopped. CPR helps maintain vital blood flow to the brain and other organs until professional medical help arrives.</p>
+        </div>
+
+        <h2 style="color: var(--primary-blue); text-align: center; margin-bottom: 3rem; font-size: 2rem;" class="animate-on-scroll">Basic CPR Steps</h2>
+        
+        <div class="steps-grid">
+            
+            <div class="step-card animate-on-scroll stagger-1" data-step="1">
+                <h3><i class="fa-solid fa-user-check" style="color: var(--primary-red);"></i> Responsiveness</h3>
+                <p>Tap the person's shoulders firmly and ask loudly, "Are you okay?" Look for any reaction, movement, or normal breathing.</p>
+            </div>
+
+            <div class="step-card animate-on-scroll stagger-2" data-step="2">
+                <h3><i class="fa-solid fa-phone-volume" style="color: var(--primary-red);"></i> Call for Help</h3>
+                <p>Call local emergency services immediately, or explicitly point to someone nearby and command them to make the call.</p>
+            </div>
+
+            <div class="step-card animate-on-scroll stagger-3" data-step="3">
+                <h3><i class="fa-solid fa-lungs" style="color: var(--primary-red);"></i> Check Breathing</h3>
+                <p>Tilt the head back slightly. Look, listen, and feel for normal breathing for no more than 10 seconds before acting.</p>
+            </div>
+
+            <div class="step-card animate-on-scroll stagger-4" data-step="4">
+                <h3><i class="fa-solid fa-hands-holding-circle" style="color: var(--primary-red);"></i> Compressions</h3>
+                <p>Place both hands in the center of the chest. Push hard and fast (100–120 compressions per minute). Allow the chest to fully recoil.</p>
+            </div>
+
+        </div>
+
+        <div class="alert-pill animate-on-scroll">
+            <i class="fa-solid fa-circle-info"></i>
+            <p style="margin: 0;"><strong>Important Reminder:</strong> CPR should ideally be performed by trained individuals. Seek formal CPR training to learn the correct, life-saving techniques.</p>
+        </div>
+
+    </div>
+
+    <footer style="margin-top: 2rem; background-color: #0f172a; padding: 4rem 5%; text-align: center;">
+        <p style="color: #94a3b8;">References: <a href="#" style="color: #cbd5e1; text-decoration: none; transition: color 0.3s;">World Health Organization</a> | <a href="#" style="color: #cbd5e1; text-decoration: none; transition: color 0.3s;">IFRC</a> | <a href="#" style="color: #cbd5e1; text-decoration: none; transition: color 0.3s;">American Red Cross</a></p>
+        <br>
+        <p style="color: #64748b;">&copy; 2026 QuickAid Hub by CuraeNurse. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
