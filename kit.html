@@ -7,41 +7,6 @@
     <link rel="stylesheet" href="styles.css">
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        /* --- KIT PAGE SPECIFIC STYLES --- */
-        .kit-hero { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; margin-bottom: 5rem; }
-        .kit-image-wrapper { position: relative; width: 100%; display: flex; justify-content: center; }
-        .kit-image-wrapper img { width: 100%; max-width: 100%; border-radius: 24px; box-shadow: 0 25px 50px -12px rgba(220, 38, 38, 0.15); border: 8px solid rgba(255, 255, 255, 0.8); animation: floatSmooth 6s ease-in-out infinite; object-fit: cover; }
-        
-        .floating-badge { position: absolute; bottom: -20px; right: -20px; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); padding: 1.5rem; border-radius: 16px; box-shadow: 0 15px 30px -5px rgba(0,0,0,0.15); border: 1px solid rgba(255,255,255,0.5); display: flex; align-items: center; gap: 15px; animation: floatSmooth 6s ease-in-out infinite; animation-delay: 1.5s; z-index: 2; }
-        .floating-badge i { font-size: 2.5rem; color: var(--primary-blue); }
-        .floating-badge div h4 { color: var(--primary-red); margin-bottom: 2px; font-size: 1.2rem; }
-        .floating-badge div p { font-size: 0.85rem; color: var(--text-muted); margin: 0; font-weight: 600; }
-        
-        .kit-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 2rem; margin-top: 3rem; }
-        .kit-item-card { background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(10px); padding: 2.5rem 2rem; border-radius: 20px; box-shadow: 0 10px 30px -10px rgba(0,0,0,0.05); border: 1px solid rgba(255, 255, 255, 0.6); transition: all 0.4s ease; text-align: left; position: relative; overflow: hidden; }
-        .kit-item-card:hover { transform: translateY(-8px); background: #fff; box-shadow: 0 20px 40px -10px rgba(220, 38, 38, 0.1); border-color: rgba(220, 38, 38, 0.3); }
-        .kit-item-card h3 { color: var(--primary-blue); font-size: 1.4rem; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 12px; border-bottom: 2px solid rgba(30, 58, 138, 0.1); padding-bottom: 1rem; }
-        .kit-item-card h3 i { color: var(--primary-red); font-size: 1.8rem; }
-        .kit-item-card ul { list-style: none; padding: 0; margin: 0; }
-        .kit-item-card ul li { margin-bottom: 1rem; font-size: 1rem; color: var(--text-muted); display: flex; align-items: flex-start; gap: 12px; line-height: 1.4; }
-        .kit-item-card ul li i { color: var(--primary-red); font-size: 1.1rem; margin-top: 2px; }
-
-        /* =======================================================
-           ABSOLUTE MOBILE OVERRIDES (FIXES THE SQUISH)
-           ======================================================= */
-        @media (max-width: 960px) {
-            .kit-hero { display: flex !important; flex-direction: column !important; text-align: center; gap: 2.5rem !important; margin-bottom: 3rem !important; }
-            .kit-image-wrapper { width: 100% !important; margin-bottom: 3rem !important; display: flex; justify-content: center; }
-            .kit-image-wrapper img { width: 100% !important; max-width: 380px !important; height: auto !important; margin: 0 auto; }
-            
-            /* Snaps the badge to the exact center under the image */
-            .floating-badge { left: 50% !important; right: auto !important; transform: translateX(-50%) !important; bottom: -25px !important; width: 90% !important; max-width: 320px !important; justify-content: center !important; text-align: left; }
-            
-            .kit-grid { grid-template-columns: 1fr !important; }
-            @keyframes floatSmooth { 0%, 100% { transform: translate(-50%, 0); } 50% { transform: translate(-50%, -10px); } }
-        }
-    </style>
 </head>
 <body>
     
@@ -75,7 +40,7 @@
             </div>
             
             <div class="kit-image-wrapper animate-on-scroll stagger-2">
-                <img src="https://images.unsplash.com/photo-1584362917165-526a968579e8?auto=format&fit=crop&q=80&w=800" alt="Well-stocked First Aid Kit">
+                <img src="assets/images/firstaid-image.jpg" alt="Well-stocked First Aid Kit">
                 <div class="floating-badge">
                     <i class="fa-solid fa-clipboard-check"></i>
                     <div>
