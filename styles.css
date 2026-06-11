@@ -1506,3 +1506,164 @@ footer a {
         padding: 1rem;
     }
 }
+
+/* ============================================================
+   ULTIMATE MOBILE RESPONSIVENESS (PHONES & TABLETS)
+   ============================================================ */
+
+/* --- TABLET SCREENS (Max Width: 960px) --- */
+@media (max-width: 960px) {
+    /* Stack side-by-side sections vertically */
+    .contact-wrapper,
+    .about-hero,
+    .safety-hero,
+    .kit-hero {
+        grid-template-columns: 1fr !important;
+        text-align: center;
+        gap: 3rem !important;
+    }
+
+    /* Stack Home Page Hero */
+    .hero {
+        flex-direction: column !important;
+        text-align: center;
+        padding-top: 2rem;
+        gap: 3rem;
+    }
+
+    .hero-content {
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hero-content h2 {
+        display: flex;
+        flex-direction: column; /* Puts the EKG heartbeat line under the text */
+        align-items: center;
+        justify-content: center;
+    }
+
+    .ekg-wrapper {
+        margin-left: 0 !important;
+        margin-top: 15px;
+    }
+
+    /* Center the floating glass badges on images */
+    .floating-badge {
+        left: 50% !important;
+        right: auto !important;
+        bottom: -20px !important;
+        transform: translateX(-50%) !important;
+        width: 85%;
+        justify-content: center;
+    }
+
+    @keyframes floatSmooth { 
+        0%, 100% { transform: translate(-50%, 0); } 
+        50% { transform: translate(-50%, -10px); } 
+    }
+}
+
+/* --- MOBILE PHONE SCREENS (Max Width: 768px) --- */
+@media (max-width: 768px) {
+    
+    /* 1. Fix the Navigation Bar */
+    .navbar {
+        flex-direction: column;
+        padding: 1.2rem 1rem;
+        gap: 15px;
+    }
+    
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+    
+    .nav-links a {
+        font-size: 0.75rem;
+        padding: 5px 8px;
+    }
+
+    /* 2. FORCE GRIDS TO STACK (This fixes the About & Kit pages) */
+    .strict-grid, 
+    .steps-grid, 
+    .kit-grid, 
+    .safety-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem !important;
+    }
+
+    /* 3. Shrink Giant Fonts */
+    h2, 
+    .hero-content h2, 
+    .about-hero h2, 
+    .safety-hero h2, 
+    .kit-hero h2, 
+    .contact-header h2 {
+        font-size: 2.2rem !important;
+        line-height: 1.2 !important;
+    }
+
+    /* 4. Reduce Box Padding */
+    .container {
+        padding: 2rem 5% !important;
+    }
+
+    .cpr-header, 
+    .step-card, 
+    .feature-card, 
+    .kit-item-card, 
+    .general-info-card, 
+    .contact-form-card {
+        padding: 1.5rem !important;
+    }
+
+    /* 5. Specific Element Fixes */
+    .step-card::before {
+        font-size: 5rem !important; /* Shrinks CPR watermarks */
+    }
+
+    .team-card {
+        width: 100% !important; /* Fits Profiles to the screen */
+        padding: 2rem 1rem !important;
+    }
+    
+    .responsibility-item {
+        flex-direction: column !important; /* Stacks About Page icons */
+        text-align: center !important;
+        align-items: center !important;
+    }
+
+    .responsibility-item i {
+        margin-bottom: 10px;
+    }
+
+    .alert-pill {
+        flex-direction: column;
+        padding: 1.5rem;
+        border-radius: 20px;
+    }
+}
+
+/* --- SMALL PHONES (Max Width: 480px) --- */
+@media (max-width: 480px) {
+    h2, 
+    .hero-content h2 {
+        font-size: 1.8rem !important;
+    }
+    
+    .nav-links a {
+        font-size: 0.7rem;
+    }
+
+    .floating-badge {
+        flex-direction: column;
+        text-align: center;
+        width: 95%;
+        padding: 1rem;
+        gap: 8px;
+    }
+}
