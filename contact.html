@@ -319,8 +319,9 @@
         }
 
         @media (max-width: 960px) {
-            .contact-wrapper { grid-template-columns: 1fr; }
-            .team-container { gap: 2rem; }
+            .contact-wrapper { display: flex; flex-direction: column; gap: 3rem; }
+            .team-container { display: flex; flex-direction: column; align-items: center; gap: 2rem; }
+            .team-card { width: 100%; max-width: 350px; }
             .floating-icon { display: none; }
         }
     </style>
@@ -383,7 +384,7 @@
                     <div class="icon-wrapper"><i class="fa-solid fa-envelope"></i></div>
                     <div>
                         <strong style="display: block; color: white; font-size: 1.1rem; margin-bottom: 4px;">Support Email</strong>
-                        support@quickaidhub.com
+                        quickaidhub@gmail.com
                     </div>
                 </div>
                 
@@ -391,7 +392,7 @@
                     <div class="icon-wrapper"><i class="fa-solid fa-map-location-dot"></i></div>
                     <div>
                         <strong style="display: block; color: white; font-size: 1.1rem; margin-bottom: 4px;">Headquarters</strong>
-                        Healthway District, Central City
+                        The College of Maasin, Maasin City, Southern Leyte
                     </div>
                 </div>
 
@@ -442,7 +443,8 @@
             </div>
 
         </div>
-        </div>
+
+    </div>
 
     <footer style="margin-top: 4rem; background-color: #0f172a; padding: 4rem 5%; text-align: center;">
         <p style="color: #94a3b8;">References: <a href="#" style="color: #cbd5e1; text-decoration: none; transition: color 0.3s;">World Health Organization</a> | <a href="#" style="color: #cbd5e1; text-decoration: none; transition: color 0.3s;">IFRC</a> | <a href="#" style="color: #cbd5e1; text-decoration: none; transition: color 0.3s;">American Red Cross</a></p>

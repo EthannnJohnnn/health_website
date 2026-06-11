@@ -1437,87 +1437,8 @@ footer a {
 /* ============================================================
    THE FINAL MOBILE OVERRIDE (NAVBAR & CENTERING FIX)
    ============================================================ */
-@media (max-width: 960px) {
-    
-    /* 1. FIX THE NAVBAR SQUISH */
-    .navbar {
-        flex-direction: column !important;
-        align-items: center !important;
-        padding: 1rem 3% !important;
-        gap: 15px !important;
-    }
-    
-    .logo {
-        justify-content: center !important;
-        text-align: center !important;
-    }
-    
-    .nav-links {
-        display: flex !important;
-        flex-wrap: wrap !important;
-        justify-content: center !important;
-        gap: 10px !important;
-        width: 100% !important;
-    }
-    
-    .nav-links a {
-        font-size: 0.75rem !important;
-        padding: 5px 8px !important;
-    }
-
-    /* 2. BREAK THE DESKTOP GRIDS */
-    .about-hero, .kit-hero, .safety-hero {
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: center !important; 
-        text-align: center !important;
-        gap: 3rem !important;
-    }
-
-    /* 3. LOCK AND CENTER THE IMAGE WRAPPER */
-    .about-image-wrapper, .kit-image-wrapper, .safety-image-wrapper {
-        display: block !important; 
-        width: 100% !important;
-        max-width: 350px !important; 
-        margin: 0 auto 4rem auto !important; 
-        text-align: center !important;
-    }
-
-    /* 4. LOCK THE IMAGE ITSELF */
-    .about-image-wrapper img, .kit-image-wrapper img, .safety-image-wrapper img {
-        display: inline-block !important; 
-        width: 100% !important;
-        margin: 0 auto !important;
-    }
-
-    /* 5. DEAD-CENTER THE BADGES */
-    .floating-badge {
-        left: 50% !important;
-        right: auto !important;
-        transform: translateX(-50%) !important;
-        bottom: -30px !important;
-        width: 85% !important;
-        max-width: 300px !important;
-        justify-content: center !important;
-        text-align: left !important;
-        margin: 0 auto !important;
-    }
-    
-    /* 6. FORCE CONTENT CARDS TO SINGLE COLUMN */
-    .strict-grid, .steps-grid, .kit-grid { 
-        grid-template-columns: 1fr !important; 
-    }
-}
-
-/* --- SMALL PHONES (Max Width: 480px) --- */
-@media (max-width: 480px) {
-    .nav-links a {
-        font-size: 0.65rem !important;
-        padding: 4px 6px !important;
-    }
-}
 /* ============================================================
-   THE FINAL MOBILE OVERRIDE (NAVBAR & CENTERING FIX)
+   THE FINAL MOBILE OVERRIDE (ALL PAGES)
    ============================================================ */
 @media (max-width: 960px) {
     
@@ -1547,8 +1468,8 @@ footer a {
         padding: 5px 8px !important;
     }
 
-    /* 2. BREAK THE DESKTOP GRIDS */
-    .about-hero, .kit-hero {
+    /* 2. BREAK THE DESKTOP GRIDS (NOW INCLUDES HOME PAGE .hero) */
+    .hero, .about-hero, .kit-hero, .safety-hero {
         display: flex !important;
         flex-direction: column !important;
         align-items: center !important; 
@@ -1556,8 +1477,16 @@ footer a {
         gap: 3rem !important;
     }
 
-    /* 3. LOCK AND CENTER THE IMAGE WRAPPER */
-    .about-image-wrapper, .kit-image-wrapper {
+    /* 3. HOME PAGE TEXT CENTERING FIX */
+    .hero-content {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        width: 100% !important;
+    }
+
+    /* 4. LOCK AND CENTER ALL IMAGE WRAPPERS */
+    .hero-image, .about-image-wrapper, .kit-image-wrapper, .safety-image-wrapper {
         display: block !important; 
         width: 100% !important;
         max-width: 350px !important; 
@@ -1565,14 +1494,14 @@ footer a {
         text-align: center !important;
     }
 
-    /* 4. LOCK THE IMAGE ITSELF */
-    .about-image-wrapper img, .kit-image-wrapper img {
+    /* 5. LOCK THE IMAGES THEMSELVES */
+    .hero-image img, .about-image-wrapper img, .kit-image-wrapper img, .safety-image-wrapper img {
         display: inline-block !important; 
         width: 100% !important;
         margin: 0 auto !important;
     }
 
-    /* 5. DEAD-CENTER THE BADGES */
+    /* 6. DEAD-CENTER THE BADGES */
     .floating-badge {
         left: 50% !important;
         right: auto !important;
@@ -1585,8 +1514,8 @@ footer a {
         margin: 0 auto !important;
     }
     
-    /* 6. FORCE CONTENT CARDS TO SINGLE COLUMN */
-    .strict-grid, .steps-grid, .kit-grid { 
+    /* 7. FORCE CONTENT CARDS TO SINGLE COLUMN */
+    .strict-grid, .steps-grid, .kit-grid, .safety-grid { 
         grid-template-columns: 1fr !important; 
     }
 }
