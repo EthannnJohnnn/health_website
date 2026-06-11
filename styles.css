@@ -1374,3 +1374,135 @@ footer a {
 .nav-links a:hover::after, .nav-links a.active::after {
     transform: scaleX(1);
 }
+
+/* ============================================================
+   MOBILE RESPONSIVENESS (PHONE & TABLET FIXES)
+   ============================================================ */
+
+/* --- TABLET SCREENS (Max Width: 960px) --- */
+@media (max-width: 960px) {
+    /* Stack side-by-side sections vertically */
+    .contact-wrapper,
+    .about-hero,
+    .safety-hero,
+    .kit-hero,
+    .hero {
+        grid-template-columns: 1fr !important;
+        text-align: center;
+        gap: 3rem;
+    }
+
+    /* Center the floating glass badges on images */
+    .floating-badge {
+        left: 50% !important;
+        right: auto !important;
+        bottom: -20px !important;
+        transform: translateX(-50%) !important;
+        width: 85%;
+        justify-content: center;
+    }
+
+    /* Update the float animation so it bobs straight up and down */
+    @keyframes floatSmooth { 
+        0%, 100% { transform: translate(-50%, 0); } 
+        50% { transform: translate(-50%, -10px); } 
+    }
+}
+
+/* --- MOBILE PHONE SCREENS (Max Width: 768px) --- */
+@media (max-width: 768px) {
+    
+    /* 1. Fix the Navigation Bar */
+    .navbar {
+        flex-direction: column; /* Stacks logo on top, links on bottom */
+        padding: 1rem;
+        gap: 15px;
+    }
+    
+    .logo {
+        justify-content: center;
+    }
+    
+    .nav-links {
+        flex-wrap: wrap; /* Allows links to flow to a new line if needed */
+        justify-content: center;
+        gap: 12px;
+    }
+    
+    .nav-links a {
+        font-size: 0.75rem; /* Shrinks nav text to fit */
+        padding: 5px;
+    }
+
+    /* 2. Shrink Giant Fonts (Using !important to override HTML styles) */
+    h2 {
+        font-size: 2rem !important; 
+    }
+
+    .contact-header h2,
+    .about-hero h2,
+    .safety-hero h2,
+    .kit-hero h2,
+    .hero-content h2 {
+        font-size: 2.2rem !important;
+    }
+
+    /* 3. Reduce Padding & Margins */
+    .container {
+        padding: 2rem 5% !important;
+    }
+
+    .cpr-header, 
+    .general-info-card,
+    .contact-form-card {
+        padding: 2rem 1.5rem !important;
+    }
+
+    /* 4. Fix Cards & Background Numbers */
+    .step-card::before {
+        font-size: 5rem !important; /* Shrinks the giant CPR watermarks */
+    }
+
+    .team-card {
+        width: 100% !important; /* Makes Profile Cards fit the screen */
+        padding: 2rem 1rem !important;
+    }
+    
+    .responsibility-item {
+        flex-direction: column; /* Stacks icons on top of text */
+        text-align: center;
+        align-items: center;
+    }
+}
+
+/* --- SMALL PHONES (Max Width: 480px) --- */
+@media (max-width: 480px) {
+    /* Super small tweaks for older/smaller phones */
+    h2 {
+        font-size: 1.8rem !important;
+    }
+    
+    .contact-header h2,
+    .about-hero h2,
+    .safety-hero h2,
+    .kit-hero h2 {
+        font-size: 1.8rem !important;
+    }
+    
+    .nav-links {
+        gap: 8px;
+    }
+    
+    .nav-links a {
+        font-size: 0.65rem;
+    }
+
+    /* Stack floating badges vertically */
+    .floating-badge {
+        flex-direction: column;
+        text-align: center;
+        width: 95%;
+        gap: 5px;
+        padding: 1rem;
+    }
+}
